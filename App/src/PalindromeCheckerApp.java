@@ -4,12 +4,19 @@ public class PalindromeCheckerApp {
         Scanner hi = new Scanner(System.in);
         System.out.println("Input Text:");
         String input = hi.nextLine();
-        String rev = "";
-
-        for (int i = input.length() - 1; i >= 0; i--) {
-            rev = rev + input.charAt(i);
+        char[] chars = input.toCharArray();
+        int start = 0;
+        int end = chars.length - 1;
+        boolean ispalindrome = true;
+        while(start<end){
+            if (chars[start]!= chars[end]){
+                ispalindrome= false;
+                break;
+            }
+            start++;
+            end--;
         }
-        if (input.equals(rev)) {
+        if (ispalindrome) {
             System.out.println("Is it a Palindrome? : true");
         } else {
             System.out.println("Is it a Palindrome? : false");
