@@ -1,1 +1,4 @@
 # PalindroneCheckerApp
+// running 
+//flow
+//objective
