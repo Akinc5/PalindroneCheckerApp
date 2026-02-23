@@ -4,19 +4,15 @@ public class PalindromeCheckerApp {
         Scanner hi = new Scanner(System.in);
         System.out.println("Input Text:");
         String input = hi.nextLine();
-        boolean isPalindrome = false;
-        for (int i = 0; i < input.length() / 2; i++) {
-            if (input.charAt(i) == input.charAt(input.length() - 1 - i)) {
-                isPalindrome = true;
-                break;
-            }
+        String rev = "";
+
+        for (int i = input.length() - 1; i >= 0; i--) {
+            rev = rev + input.charAt(i);
         }
-        if (isPalindrome) {
+        if (input.equals(rev)) {
             System.out.println("Is it a Palindrome? : true");
         } else {
             System.out.println("Is it a Palindrome? : false");
         }
-
-        hi.close();
     }
 }
