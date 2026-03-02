@@ -1,22 +1,24 @@
-import java.util.*;
-
+import java.util.Scanner;
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         Scanner hi = new Scanner(System.in);
         System.out.println("Input Text:");
         String input = hi.nextLine();
-        Deque<Character> dt = new ArrayDeque<>();
-        for (char c : input.toCharArray()) {
-            dt.add(c);
-        }
+        hi.close();
+        String normalized = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
         boolean isPalindrome = true;
-        while(dt.size()>1){
-            if (!dt.removeFirst().equals(dt.removeLast())) {
+        for (int i = 0; i < normalized.length() / 2; i++) {
+            if (normalized.charAt(i) !=
+                    normalized.charAt(normalized.length() - 1 - i)) {
                 isPalindrome = false;
                 break;
             }
         }
-        System.out.println("Is it a Palindrome? : " + isPalindrome);
-        hi.close();
+        if (isPalindrome) {
+            System.out.println("Is it a Palindrome? : " + isPalindrome);
+        } else {
+            System.out.println("Is it a Palindrome? : " + isPalindrome);
+        }
     }
 }
+
