@@ -21,7 +21,6 @@ class StackStrategy implements PalindromeStrategy {
         return true;
     }
 }
-
 class DequeStrategy implements PalindromeStrategy {
     public boolean check(String input) {
 
