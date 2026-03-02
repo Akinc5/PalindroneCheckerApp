@@ -5,13 +5,13 @@ public class PalindromeCheckerApp {
         Scanner hi = new Scanner(System.in);
         System.out.println("Input Text:");
         String input = hi.nextLine();
-        Deque<Character> dt = new ArrayDeque<>();
+        LinkedList<Character> lt = new LinkedList<>();
         for (char c : input.toCharArray()) {
-            dt.add(c);
+            lt.add(c);
         }
         boolean isPalindrome = true;
-        while(dt.size()>1){
-            if (!dt.removeFirst().equals(dt.removeLast())) {
+        while(lt.size()>1){
+            if (!lt.removeFirst().equals(lt.removeLast())) {
                 isPalindrome = false;
                 break;
             }
