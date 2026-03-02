@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class PalindromeCheckerApp {
+
     public static void main(String[] args) {
         Scanner hi = new Scanner(System.in);
         System.out.println("Input Text:");
