@@ -1,22 +1,22 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class PalindromeCheckerApp {
+
     public static void main(String[] args) {
         Scanner hi = new Scanner(System.in);
         System.out.println("Input Text:");
         String input = hi.nextLine();
-        Deque<Character> dt = new ArrayDeque<>();
-        for (char c : input.toCharArray()) {
-            dt.add(c);
-        }
-        boolean isPalindrome = true;
-        while(dt.size()>1){
-            if (!dt.removeFirst().equals(dt.removeLast())) {
-                isPalindrome = false;
-                break;
-            }
-        }
-        System.out.println("Is it a Palindrome? : " + isPalindrome);
+        boolean result = check(input, 0, input.length() - 1);
+        System.out.println("Is it a Palindrome? : " + result);
         hi.close();
+    }
+    private static boolean check(String s, int start, int end) {
+        if (start >= end) {
+            return true;
+        }
+        if (s.charAt(start) != s.charAt(end)) {
+            return false;
+        }
+        return check(s, start + 1, end - 1);
     }
 }
